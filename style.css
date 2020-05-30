@@ -1,0 +1,185 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+/* ---------------header部分样式-------------- */
+header {
+    background-color: rgb(51, 51, 51);
+    width: 100%;
+    height: 60px;
+}
+
+.header {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.header span {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    top: 10px;
+    float: left;
+}
+
+ul {
+    list-style: none;
+
+
+}
+
+.header li a {
+    color: white;
+    font-size: 10px;
+    float: right;
+    margin-left: 10px;
+    position: relative;
+    top: 5px;
+
+}
+
+/* -------------banner部分样式------ */
+#banner {
+    height: 300px;
+    width: 100%;
+    background-color: rgb(102, 187, 51);
+
+}
+
+#banner ul {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+
+}
+
+#banner li {
+    vertical-align: bottom;
+    height: 40px;
+    width: 30px;
+    border: 1px solid rgb(51, 51, 51);
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(178, 221, 153);
+}
+
+#banner li span {
+    position: relative;
+    top: 10px;
+    color: rgb(102, 187, 51);
+}
+
+#banner .wrap {
+    width: 960px;
+    margin: 0 auto;
+    height: 300px;
+    position: relative;
+}
+
+#banner .li-active {
+    height: 55px;
+    color: rgb(51, 51, 51);
+    background-color: rgb(224, 241, 214);
+
+}
+
+/* --------nav部分样式------ */
+nav {
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid silver;
+}
+
+.nav-wrap {
+    width: 960px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav-wrap ul {
+    position: absolute;
+    bottom: 0;
+}
+
+#nav ul li {
+
+    float: left;
+
+}
+
+#nav ul a {
+    display: inline-block;
+    width: 100px;
+    height: 48px;
+    border-radius: 20px 20px 0 0;
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    line-height: 48px;
+    text-align: center;
+    background-color: rgb(238, 238, 238);
+}
+
+#nav ul .active {
+    background-color: white;
+}
+
+#nav ul .line {
+    border-right: 1px solid gray;
+}
+
+/* ----------main部分样式----------- */
+#main {
+    width: 100%;
+    height: 650px;
+}
+
+.main-wrap {
+    width: 960px;
+    height: 680px;
+    margin: 0 auto;
+
+}
+
+.item-1,
+.item-2,
+.item-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-wrap .item-1 div,
+.main-wrap .item-2 div,
+.main-wrap .item-3 div {
+     padding: 0 80px;
+     flex:1;
+    height: 200px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+    line-height: 200px;
+    margin: 2px;
+    margin-top: 10px;
+}
+/* ------footer部分样式----------- */
+
+footer{
+width: 100%;
+height: 100px;
+text-align: center;
+background-color: rgb(102,102,102);
+}
+.text{
+color: white;
+position: relative;
+top: 20px;
+}
