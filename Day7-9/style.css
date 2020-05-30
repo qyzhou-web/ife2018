@@ -116,6 +116,8 @@ nav {
 }
 
 #nav ul a {
+    position: relative;
+    bottom: -1px;
     display: inline-block;
     width: 100px;
     height: 48px;
@@ -131,7 +133,10 @@ nav {
 }
 
 #nav ul .active {
+
     background-color: white;
+    border-bottom: 1px solid white;
+
 }
 
 #nav ul .line {
