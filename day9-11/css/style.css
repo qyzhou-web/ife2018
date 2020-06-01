@@ -1,0 +1,405 @@
+@charset "UTF-8";
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    .w {
+        width: 970px;
+        margin: 0 auto;
+    }
+
+    ul {
+        list-style: none;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+    /* ---------header部分样式---------- */
+    .header {
+        position: relative;
+        height: 994px;
+    }
+
+    .bg,
+    .title,
+    .info,
+    .handle,
+    .h-title {
+        position: absolute;
+        transform: translate(-50%);
+        left: 50%;
+
+    }
+
+    .header .img {
+        position: absolute;
+
+    }
+
+    .header .mask {
+        position: relative;
+    }
+
+    .header .title {
+        font-size: 62px;
+        color: white;
+        margin-top: 215px;
+    }
+
+    .header .info {
+        font-size: 20px;
+        color: #eaeaea;
+        margin-top: 340px;
+
+    }
+
+    .header .info p {
+        margin-bottom: 5px;
+    }
+
+    .header .info p,
+    .header .h-title p {
+
+        text-align: center;
+    }
+
+    .header .handle {
+        height: 250px;
+        width: 970px;
+        border: 1px solid gray;
+        margin-top: 554px;
+    }
+
+    .header .h-title {
+        margin-top: 60px;
+        color: white;
+    }
+
+    .header .h-title .p1 {
+        font-size: 16px;
+
+    }
+
+    .header .h-title .p2 {
+        margin-top: 15px;
+        font-size: 12px;
+        color: gray;
+    }
+
+    .header .h-link {
+        text-align: center;
+        position: relative;
+        top: 150px;
+    }
+
+    .header .h-link li,
+    .header .h-link a {
+        display: inline-block;
+    }
+
+    .header .h-link a {
+
+        height: 50px;
+        border: 1px solid grey;
+        color: grey;
+        font-size: 14px;
+        line-height: 50px;
+    }
+
+    .header .h-link .a1,
+    .header .h-link .a2 {
+        margin-right: 30px;
+        width: 290px;
+    }
+
+    .header .h-link .a3 {
+        width: 130px;
+    }
+
+    /* ------nav部分样式代码------ */
+    nav {
+
+        height: 700px;
+
+    }
+
+    .nav .nav-title {
+        text-align: center;
+        margin-top: 86px;
+    }
+
+    .nav .nav-title .nav-p1 {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .nav .nav-title .nav-p2 {
+        font-size: 40px;
+    }
+
+    .nav .nav-select .first,
+    .nav .nav-select .access,
+    .nav .nav-select .fluid,
+    .nav .nav-select .custom {
+        display: inline-block;
+        /* width: 370px; */
+    }
+
+    .nav .nav-select .nav-item1 p,
+    .nav .nav-select .nav-item2 p {
+        font-size: 14px;
+    }
+
+    #item-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .item-content {
+        font-size: 16px;
+    }
+
+    .nav .nav-select .nav-item1 {
+        margin: 80px 0;
+    }
+
+    .nav .nav-select .nav-item1 .first,
+    .nav .nav-select .nav-item2 .fluid {
+        float: left;
+        position: relative;
+
+    }
+
+    .nav .nav-select .nav-item1 .access,
+    .nav .nav-select .nav-item2 .custom {
+        float: right;
+        position: relative;
+    }
+
+    .nav .nav-select .nav-item1 .first .item-info {
+        display: inline-block;
+
+    }
+
+    .nav .nav-select .first::before,
+    .nav .nav-select .access::before,
+    .nav .nav-select .custom::before,
+    .nav .nav-select .fluid::before {
+        position: absolute;
+        left: -70px;
+        top: 5px;
+        content: "";
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-image: url("../img/nav-bg.png");
+
+    }
+
+    .nav .nav-select .access::before {
+        background-position: top right;
+    }
+
+    .nav .nav-select .fluid::before {
+        background-position: bottom left;
+    }
+
+    .nav .nav-select .custom::before {
+        background-position: bottom right;
+    }
+
+    /* -----banner部分样式------------------------------- */
+    #article1 {
+        width: 1600px;
+        margin: 0 auto;
+        position: relative;
+
+    }
+
+    #article1 {
+        width: 1600px;
+        height: 805px;
+    }
+
+    #article1 .banner {
+        position: absolute;
+    }
+
+    #article1 .img {
+        position: absolute;
+
+    }
+
+    #article1 .mask {
+        position: relative;
+    }
+
+    #article1 .sup {
+        position: absolute;
+        transform: translate(-50%);
+        left: 50%;
+    }
+
+    #article1 .sup .sup-p1 {
+        width: 450px;
+        color: white;
+        font-size: 42px;
+        margin: 180px 0 130px 0;
+    }
+
+    #article1 .sup .sup-p2 {
+        width: 450px;
+        color: #eaeaea;
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    #article1 .btn1,
+    #article1 .btn2 {
+        color: white;
+        width: 240px;
+        height: 60px;
+        border: 1px solid #eaeaea;
+        display: inline-block;
+        line-height: 60px;
+        text-align: center;
+        margin-right: 30px;
+
+    }
+
+    #article1 .sup #active {
+        background-color: #fff;
+        color: black;
+    }
+
+    #article1 .screen {
+        position: absolute;
+        right: 0;
+        top: 130px;
+        border: 1px solid #eaeaea;
+        padding: 35px 0px 35px 45px;
+        border-radius: 60px 0 0 60px;
+    }
+
+    /* ---------#article2部分样式---- */
+    #article2 {
+        width: 1600px;
+        height: 480px;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    #article2 .try {
+
+        font-size: 42px;
+        text-align: center;
+        margin-top: 90px;
+    }
+
+    #article2 .s-all {
+        display: flex;
+    }
+
+    #article2 .s-item {
+
+        text-align: center;
+        display: inline-block;
+        flex: 1;
+        margin-top: 80px;
+    }
+    #article2 .s-item img{
+        margin-bottom: 40px;
+    }
+    .space {
+        margin: 0 80px;
+    }
+
+    /* ------article3部分样式----- */
+    #article3 {
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    #article3 .learn img {
+        width: 570px;
+        height: 350px;
+        overflow: hidden;
+
+    }
+
+    #article3 .learn {
+        margin: 80px 0px;
+    }
+
+    #article3 .content1 {
+        width: 300px;
+        float: right;
+    }
+
+    #article3 .p1 {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 80px 0px 30px 0px;
+    }
+
+    #article3 .p2 {
+        margin-bottom: 30px;
+    }
+
+    #article3 .content2 {
+        width: 360px;
+        display: inline-block;
+    }
+
+    #article3 .content2 .p1 {
+        margin-top: 40px
+    }
+
+    #article3 .choose .img {
+        float: right;
+        width: 570px;
+        height: 350px;
+        overflow: hidden;
+
+    }
+
+    #article3 .choose img {
+        margin-top: -80px;
+    }
+
+    #article3 .choose {
+        margin-bottom: 80px;
+    }
+
+    /* ----------article4部分样式---------- */
+    #article4 .awe-title {
+        text-align: center;
+    }
+
+    #article4 .awe-title .p1 {
+        margin: 70px 0px 20px 0px;
+        font-size: 42px;
+        font-weight: 500;
+    }
+
+    #article4 .awe-title .p2{
+       
+        color:gray
+    }

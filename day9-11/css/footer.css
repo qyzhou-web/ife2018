@@ -1,0 +1,26 @@
+@charset "utf-8";
+#footer{
+    background-color: black;
+    height: 410px;
+  width: 1600px;
+  text-align: center;
+}
+#footer .center div{
+    display: inline-block;
+    width: 270px;
+    height: 230px;
+    /* border: 1px solid white; */
+    color: gray;
+    text-align: left;
+    margin-top: 90px;
+    vertical-align: top;
+}
+#footer .center div p:nth-child(1){
+    color: white;
+}
+#footer .center div p{
+    margin-bottom: 25px;
+}
+#footer .center{
+    
+}

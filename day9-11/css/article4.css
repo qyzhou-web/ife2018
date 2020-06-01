@@ -1,0 +1,79 @@
+@charset "utf-8";
+#article4{
+    padding-bottom:70px ;
+    border-bottom: 1px solid #eaeaea;
+}
+#article4 .awe-person{
+    margin-top:50px;
+}
+#article4 .a-wrap,#article4 .awe-mask{
+    display: inline-block;
+    width: 470px;
+    height: 340px;
+    overflow: hidden;
+}
+#article4  .awe-item1{
+    position: relative;
+    display: inline-block;
+}
+#article4 .a-wrap>img{
+    margin-top:-30px;
+    margin-left: -10px;
+}
+#article4 .awe-mask{
+    opacity:0
+}
+#article4 .active{
+    opacity:1
+}
+
+#article4 .awe-mask,#article4 .awe-mask img{
+position: absolute;
+left: 0px;
+top: 0px;
+}
+#article4 .awe-info {
+    color: white;
+    text-align: center;
+    position: relative;
+    top:100px
+}
+#article4 .awe-info .p2{
+    color:#eaeaea;
+    font-size: 12px;
+    margin-top: 15px;
+}
+#article4 .awe-info ul{
+    margin-top: 40px;
+}
+#article4 .awe-info li{
+    display: inline-block;
+}
+#article4 .awe-info li a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 25px;
+    margin-left: 20px;
+   background-image: url("../img/icon-1.png");
+   background-repeat: no-repeat;
+
+   
+   
+}
+#article4 .awe-info li .a1{
+    background-position: 20px center;
+}
+#article4 .awe-info li .a2{
+    background-position:center;
+}
+#article4 .awe-info li .a3{
+    background-position:right 15px center;
+}
+#article4 .awe-item1:hover .awe-mask{
+    opacity: 1;
+    cursor:pointer;
+}
+
+
