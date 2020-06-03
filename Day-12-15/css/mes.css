@@ -1,0 +1,149 @@
+.clearfix::before{
+    content: "";
+    display:table;
+    clear: both;
+
+}
+.clearfix{
+    zoom:1
+}
+
+#section {
+    float: left;
+    height: 100%;
+    overflow: auto;
+    width: 400px;
+}
+#section::-webkit-scrollbar{
+    display: none;
+}
+.s-wrap {
+    width: 352px;
+    margin: 0px 20px 0px 28px;
+
+
+
+}
+
+#section .title-text {
+    font-size: 24px;
+    font-family: Myriad Pro;
+    padding: 30px 0px;
+    color: gray;
+    border-bottom: 1px solid #eaeaea
+}
+
+#section input {
+    height: 35px;
+    width: 338px;
+    border: 1px solid #eaeaea;
+    margin: 20px 0px;
+    border-radius: 3px;
+
+
+}
+
+#section input::placeholder {
+    color: rgb(176, 185, 198);
+    font-size: 13px;
+    padding-left: 20px;
+
+}
+
+#section .img {
+    height: 48px;
+    width: 50px;
+    border-radius: 25px;
+    /* background-color: pink; */
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+#section  .face1{
+    background-image: url("../img/12_15-assets/face1.png") 
+}
+#section  .face2{
+    background-image: url("../img/12_15-assets/face2.png");
+}
+#section .face3{
+    background-image: url("../img/12_15-assets/face3.png");
+}
+#section .face4{
+    background-image: url("../img/12_15-assets/face4.png");
+}
+#section .input {
+    position: relative;
+}
+
+#section .ser {
+    position: absolute;
+    right: 25px;
+    top: 30px;
+
+}
+
+#section .img {
+    display: inline-block;
+}
+
+#section .person .title {
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    /* width: 352px; */
+}
+
+#section .person .title .p1 {
+    font-weight: 500;
+    color: gray;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#section .person .title .p2,
+#section .person .text p {
+    font-size: 13px;
+    color: rgb(176, 185, 198);
+}
+#section .person .text p{
+    display: inline-block;
+    max-width: 320px;
+}
+#section .person .text{
+    width: 352px;
+    position: relative;
+}
+
+#section .person {
+    position: relative;
+    padding-top: 15px;
+    border-top: 1px solid #eaeaea;
+    margin-bottom: 25px;
+}
+
+#section .distance {
+    font-size: 14px;
+    color: rgb(176, 185, 198);
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+#section .circle{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    text-align: center;
+    display: inline-block;
+    height: 24px;width: 24px;
+    border-radius: 12px;
+    background-color: rgb(40,156,246);
+}
+#section .text .circle p{
+    color: white;
+    font-size: 12px;
+  /* float: right; */
+    line-height: 24px;
+ 
+    
+
+}

@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body,
+html{
+    height: 100%;
+    width: 100%;
+    overflow:hidden
+}
+
+#aside {
+    width: 100px;
+    height: 100%;
+    background-color: rgb(29, 37, 49);
+   float: left;
+}
+
+#aside  .link{
+    position: fixed;
+    top:20px;
+    left:20px
+
+}
+
+#aside .link a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background-image: url("../img/12_15-assets/1.png");
+    background-repeat: no-repeat;
+}
+
+#aside .link .a1{
+    background-color: rgb(42, 159, 238);
+    background-image: url("../img/12_15-assets/1.png");
+    background-position: 14px 19px;
+}
+
+#aside .link .a2{
+    background-color: rgb(151, 133, 238);
+    background-position: 14px -62px;
+}
+
+#aside .link .a3{
+    background-color: rgb(241, 81, 15);
+    background-position: 14px -140px;
+}
+
+#aside  .link .a4{
+    box-sizing: border-box;
+    border:2px solid rgb(45,56,72);
+    background-position: 13px -222px;
+}
+#aside .hander{
+    position: fixed;
+    bottom: 20px;
+    left: 26px;
+}
+#aside .hander li{
+    display: inline-block;
+}
+#aside .hander a{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-image: url("../img/12_15-assets/Bottom Actions.png");
+    background-repeat: no-repeat;
+}
+#aside .hander .a5{
+
+
+}
+
+#aside .hander .a6{
+    background-position: right bottom;
+    margin-left: 17px;
+}
+
