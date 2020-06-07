@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 基于上一个任务中，关于加减乘除的任务，加上对于特殊情况的判断，
+        比如判断两个输入框是否都是正常输入了数字类型的内容 
+    ，比如除法的时候除数是否为0，当判断到输入有异常的时候，把错误信息提示到Console中。 -->
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        const addBtn = document.getElementById('add-btn');
+        const minusBtn = document.querySelector('#minus-btn');
+        const timesBtn = document.querySelector('#times-btn');
+        const divideBtn = document.querySelector('#divide-btn');
+        const result = document.getElementById('result');
+
+        addBtn.onclick = add;
+        minusBtn.onclick = minus;
+        timesBtn.onclick = times;
+        divideBtn.onclick = divide;
+
+        function add(value1,value2) {
+            const value1 = Number(document.getElementById('first-number').value);
+            const value2 = Number(document.getElementById('second-number').value);
+            let sum = 0;
+            sum = value1 + value2;
+            result.innerText = "运算结果" + sum;
+        }
+
+        function minus() {
+            const value1 = Number(document.getElementById('first-number').value);
+            const value2 = Number(document.getElementById('second-number').value);
+            let min = 0;
+            min = value1 - value2;
+            result.innerText = "运算结果" + min;
+        }
+
+        function times() {
+            const value1 = Number(document.getElementById('first-number').value);
+            const value2 = Number(document.getElementById('second-number').value);
+            let times = 0;
+            times = value1 * value2;
+            result.innerText = "运算结果" + times; 
+        }
+
+        function divide() {
+            const value1 = Number(document.getElementById('first-number').value);
+            const value2 = Number(document.getElementById('second-number').value);
+            if(value2 === 0){
+                console.log("除数不能为0，请重新输入")
+            }else{
+            let divide = 0;
+            divide = value1 / value2;
+            result.innerText = "运算结果" + divide; }
+        }
+    </script>
+</body>
+
+</html>

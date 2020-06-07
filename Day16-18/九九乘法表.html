@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="box"></div>
+
+    <script>
+        let m = 0;
+        var tabNode = document.createElement("table"),
+        capNode = document.createElement('caption');
+        capNode.innerHTML = "九九乘法表";
+        tabNode.appendChild(capNode);
+
+        for (let i = 9;i>0;i--){
+          var trNode = tabNode.insertRow();
+            for(let j = 1 ;j< i+1;j++){
+                var tdNode = trNode.insertCell()
+                  m =j*i;
+                  tdNode.innerHTML = j+'*'+i+'='+m;
+                  
+            }
+          var box = document.getElementById('box');
+          box.appendChild(tabNode);
+        }
+    </script>
+</body>
+
+</html>

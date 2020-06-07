@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+        const result = document.getElementById('result');
+        const transBtn = document.getElementById('trans-btn');
+       
+        transBtn.onclick = function () {
+
+            const value1 = Number(document.querySelector('#dec-number').value);
+            const value2  = Number(document.getElementById('bin-bit').value);
+
+            dec2bin(value1,value2);
+        };
+
+        function dec2bin(value1,value2 ) {
+
+            if (value1 < 0) {
+                alert('请输入非负整数')
+            } else {
+                let res = binary(value1);
+                let zore = '';
+                let length  = value2 - res.length;
+                if(length<0){
+                    console.log("输入位数小于原位数，请重输");
+                }else if(length>0){
+                    for(let i=0;i<length;i++){
+                        zore = zore +'0';
+                    }
+                }
+               res = zore + res;
+                result.innerHTML = "运算结果为：" + res;
+            }
+        }
+
+        function binary(num) {
+           let resArry = [],
+                xresArry = [];
+            while (num > 0) {
+                resArry.push(num % 2);
+                num = parseInt(num / 2);
+
+            }
+
+            while (resArry.length !== 0) {
+                xresArry.push(resArry.pop())
+            }
+            return xresArry.join().replace(/,/g, "");
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
