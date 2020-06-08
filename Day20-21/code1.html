@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn">Submit</button>
+    <script>
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.onclick = function () {
+            let value1 = document.getElementById('name').value;
+            console.log(value1);
+        }
+        document.onkeydown = function (e) {
+            if (e.keyCode === 13) {
+                let value1 = document.getElementById('name').value;
+                console.log(value1);
+            }else if (e.keyCode === 27) {
+                let name = document.getElementById('name');
+                name.value = '';
+                name.focus();
+               
+            }
+        }
+       
+
+    </script>
+</body>
+
+</html>

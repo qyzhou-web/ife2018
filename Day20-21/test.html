@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <title> New Document </title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script language="JavaScript" type="text/javascript">
+var userName = '啊啊啊'
+    function hello(_name) {
+        alert("hello," + _name);
+    }
+    //创建一个函数，用于返回一个无参数函数
+    function _hello(_name) {
+        return function () {
+            hello(_name);
+        }
+    }
+    window.setTimeout(_hello(userName), 3000);
+    //-->
+</script>

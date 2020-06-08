@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    #smile {
+        width: 480px;
+        height: 480px;
+        margin: 0 auto;
+        /* background-color: pink; */
+        background-image: url('./img/erik_ce204002.jpg');
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+    }
+</style>
+
+<body>
+
+    <h1>Erik笑容</h1>
+    <div id="smile"></div>
+    <script>
+        const smile = document.getElementById('smile');
+        let i = 0;
+      
+        setInterval(() => {
+            i = i - 480;
+            if (i <= -7680) {
+                i = -7680;
+             const id = setInterval(() => {
+                 i= i+480;
+                 if (i>=0){
+                     i = 0;
+                     clearInterval(id);
+                 }
+              }, 150);
+            }
+            let position = i + 'px';
+            smile.style.backgroundPosition = '0px' + ' ' + position;
+        }, 150);
+    </script>
+</body>
+
+</html>
