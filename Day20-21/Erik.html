@@ -27,24 +27,58 @@
     <h1>Erik笑容</h1>
     <div id="smile"></div>
     <script>
+        // var i = 0;
+        //     var flag = 1;
+        //     var un = document.querySelector('#smile');
+        //     function cha() {
+        //         if (flag) {
+        //             i = i + 1;
+        //             if (i == 16) flag = 0;
+        //         } else {
+        //             i = i - 1;
+        //             if (i == 0) flag = 1;
+        //         }
+        //         un.style.backgroundPosition = '0px ' + (480 * i) * (-1) + 'px';
+        //     }
+        //     setInterval(cha, 100);
         const smile = document.getElementById('smile');
-        let i = 0;
-      
-        setInterval(() => {
+        let i = 0,flag = true;
+        function smileFun() {
+        if(flag){
             i = i - 480;
-            if (i <= -7680) {
-                i = -7680;
-             const id = setInterval(() => {
-                 i= i+480;
-                 if (i>=0){
-                     i = 0;
-                     clearInterval(id);
-                 }
-              }, 150);
+            if(i === -7680){
+                flag = false;
             }
-            let position = i + 'px';
-            smile.style.backgroundPosition = '0px' + ' ' + position;
-        }, 150);
+        }else{
+            i = i+480;
+            if(i === 0){
+                flag = true;
+            }
+
+        }
+         smile.style.backgroundPosition = '0px ' + i + 'px'
+        }
+        setInterval(smileFun,100)
+       
+        // let sp = document.getElementById("smile");
+        // sp.style.backgroundPositionY = 0;
+
+        // function spAnimal(flag) {
+        //     let pos = parseInt(sp.style.backgroundPositionY);
+        //     if ((pos === -7680 && flag) || pos === 0 && !flag) {
+        //         flag = !flag;
+        //     }
+        //     console.log(pos);
+        //     if (flag) {
+        //         sp.style.backgroundPositionY = pos - 480 + "px";
+        //     } else {
+        //         sp.style.backgroundPositionY = pos + 480 + "px";
+        //     }
+        //     setTimeout(() => {
+        //         spAnimal(flag)
+        //     }, 150);
+        // }
+        // spAnimal(true);
     </script>
 </body>
 
