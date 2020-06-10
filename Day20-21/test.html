@@ -1,27 +1,28 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
-
-<head>
-    <title> New Document </title>
-</head>
-
-<body>
-
-</body>
-
+    <head>
+    </head>
+    <body>
+        <div id="fade-obj" style="width:300px;height:300px;background:#000;"></div>
+        <button id="fade-btn">淡出</button>
+        <script>
+            var fa = document.querySelector('#fade-obj');
+            var btn = document.querySelector('#fade-btn');
+            fa.style.opacity = 1;
+            function fade() {
+                if (btn.innerHTML == '淡出') {
+                    if (fa.style.opacity == 0) btn.innerHTML = '淡入';
+                    else {fa.style.opacity -= 0.2; setTimeout('fade()', 500);}
+                } else {
+                    if (fa.style.opacity == 1) btn.innerHTML = '淡出';
+                    else {
+                        var t = fa.style.opacity;
+                        fa.style.opacity = 0.2 + Number(t);
+                        setTimeout('fade()', 500);
+                    }
+                }
+                console.log(fa.style.opacity);
+            }
+            btn.onclick = fade;
+        </script>
+    </body>
 </html>
-
-<script language="JavaScript" type="text/javascript">
-var userName = '啊啊啊'
-    function hello(_name) {
-        alert("hello," + _name);
-    }
-    //创建一个函数，用于返回一个无参数函数
-    function _hello(_name) {
-        return function () {
-            hello(_name);
-        }
-    }
-    window.setTimeout(_hello(userName), 3000);
-    //-->
-</script>

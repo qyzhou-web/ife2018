@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+
+        // function compare(a, b) {
+        //     return b - a;
+        // }
+        // function compare(a,b){
+        //     return a-b;
+        // }
+        // function compare(a, b) {
+        //     return a.localeCompare(b);
+        // }
+        // function compare(a,b) {
+        //     return b.localeCompare(a);
+        // }
+        // var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+        // var arr = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+
+        // function compare (arr1,arr2){
+        //     return arr2[1]-arr1[1]
+        // }
+        var arr = [{
+            id: 1,
+            name: 'candy',
+            value: 40
+        }, {
+            id: 2,
+            name: 'Simon',
+            value: 50
+        }, {
+            id: 3,
+            name: 'Tony',
+            value: 45
+        }, {
+            id: 4,
+            name: 'Annie',
+            value: 60
+        }];
+        function compare (obj1,obj2) {
+            return obj1.value-obj2.value;
+
+        }
+        console.log(arr.sort(compare))
+    </script>
+</body>
+
+</html>
