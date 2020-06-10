@@ -37,25 +37,37 @@
         //     arr.push(arr2);
         // }
         // console.log(arr)
-        var menuObject = {
-            "1": {
-                name: "Area1",
-                subMenu: {
-                    "3": {
-                        name: "Area1-1"
-                    },
-                    "4": {
-                        name: "Area1-2",
-                        subMenu: {
-                            "7": {
-                                name: "Area1-2-3"
-                            }
-                        }
-                    }
+        function arToOb(ar) {
+            var res = {}
+            var fi;
+
+            function find(ob, el) {
+                if (!ob) return;
+                if (ob[el]) {
+                    fi = ob[el];
+                    return;
+                }
+                for (var te in ob) {
+                    if (typeof ob[te] == 'object')
+                        find(ob[te], el);
                 }
             }
-
-
+            for (var te of ar) {
+                //console.log(te);
+                var tt = {
+                    'name': te[1]
+                };
+                if (te[2] == -1)
+                    res[te[0]] = tt;
+                else {
+                    find(res, te[2]);
+                    if (!fi['subMenu']) {
+                        fi['subMenu'] = {};
+                    }
+                    fi['subMenu'][te[0]] = tt;
+                }
+            }
+            return res;
         }
 
         var menuArr = [
@@ -68,10 +80,7 @@
             [7, "Area1-2-3", 4],
             [8, "Area2-2-1", 6],
         ];
-        let obj = {};
-        for(let item of menuArr){
-            obj[item.shift()]= item.shift();
-        }
+        console.log(arToOb(menuArr));
     </script>
 </body>
 

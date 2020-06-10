@@ -62,43 +62,68 @@
             }
         }
 
-        // 假设id和name均不会重复，根据输入name找到对应的id
+
         function findIdByName(name) {
-            let id ;
-            switch(name){
-
-         case tree['name']:  id = tree['id']; break;
-         case tree['left']['name']:  id = tree['left']['id']; break;
-         case tree['right']['name']:  id = tree['right']['id']; break;
-         case tree['left']['left']['name']:  id = tree['left']['left']['id']; break;
-         case tree['left']['right']['name']:  id = tree['left']['right']['id']; break;
-         case tree['left']['left']['left']['name']:  id = tree['left']['left']['left']['id']; break;
-         case tree['left']['left']['right']['name']:  id = tree['left']['left']['left']['id']; break;
-         case tree['left']['left']['left']['left']['name']:  id = tree['left']['left']['left']['left']['id']; break;
-
-
-
+            var res;
+            function fu(tr) {
+                if (!tr) return;
+                if (tr.name == name)
+                    res = tr.id;
+                fu(tr.left);
+                fu(tr.right);
+               
             }
+            fu(tree);
+            // console.log(res)
+            return res;
         }
 
         // 假设id和name均不会重复，根据输入id找到对应的name
         function findNameById(id) {
+            var res;
 
+            function fu(tr) {
+                if (!tr) return;
+                if (tr.id == id)
+                    res = tr.name;
+                fu(tr.left);
+                fu(tr.right);
+            }
+            fu(tree);
+            return res;
         }
 
         // 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
         function getListWithDLR() {
-
+            function fu(tr) {
+                if (!tr) return;
+                console.log(tr.name);
+                fu(tr.left);
+                fu(tr.right);
+            }
+            fu(tree);
         }
 
         // 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
         function getListWithLDR() {
-
+            function fu(tr) {
+                if (!tr) return;
+                fu(tr.left);
+                console.log(tr.name);
+                fu(tr.right);
+            }
+            fu(tree);
         }
 
         // 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
         function getListWithLRD() {
-
+            function fu(tr) {
+                if (!tr) return;
+                fu(tr.left);
+                fu(tr.right);
+                console.log(tr.name);
+            }
+            fu(tree);
         }
     </script>
 </body>
