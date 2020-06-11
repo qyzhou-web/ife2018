@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time"></div>
+    <script>
+        //code2.html:13 Wed Jun 10 2020 19:29:51 GMT+0800 (中国标准时间)
+        //2008年10月10日星期一 12:12:12
+        const time = document.getElementById('time');
+        setInterval(function () {
+            showTime(new Date())
+        }, 1000);
+
+        function showTime(date) {
+            let dateStr = dateString(date);
+            let weekday = week(date.getDay());
+            let timeStr = timeString(date);
+            let result = dateStr + weekday + timeStr;
+            time.innerHTML = result;
+            return result
+
+        }
+
+        function week(i){
+            let week = ["日", "一", "二", "三", "四", "五", "六", ];
+            return '星期' + week[i];
+        }
+        // timeString(new Date())
+        function timeString(date) {
+            let res1 = date.toLocaleTimeString();
+            let res2 = res1.slice(2);
+            let res21 = res2.split(':');
+            res21[0] = zore(res21[0]);
+            res2 = res21.join(':');
+            let res3 = res1.slice(0, 1);
+            if (res3 === '下') {
+                res3 = 'pm'
+            } else if (res3 === '上') {
+                res3 = 'am'
+            }
+
+            let result = res2 + '  ' + res3;
+            return result;
+
+        }
+
+
+        function dateString(date) {
+            let res1 = date.toLocaleDateString();
+            let res2 = res1.split('/');
+            res2[1] = zore(res2[1]);
+            res2[2] = zore(res2[2]);
+            let result = res2.join('-');
+
+            return result;
+
+        }
+
+        function zore(str) {
+            if (str.length < 2) {
+                str = '0' + str;
+            }
+            return str;
+        }
+    </script>
+</body>
+
+</html>
