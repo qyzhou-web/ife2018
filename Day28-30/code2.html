@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提示框</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 200px;
+            margin-left: 500px;
+            position: relative;
+        }
+
+        input {
+            width: 200px;
+            height: 25px;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            padding-left: 8px;
+        }
+
+        ul {
+            width: 200px;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            border: 1px solid gray;
+            border-top: none;
+
+
+        }
+
+        ul li {
+            height: 25px;
+            line-height: 25px;
+            padding-left: 8px;
+            padding-top: 8px;
+            color: gray;
+            font-size: 14px;
+        }
+
+        #email-sug-wrapper li:hover {
+            background-color: pink;
+        }
+
+        .select {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+    <script>
+        var postfixList = ['@163.com', '@gmail.com', '@126.com', '@qq.com', '@263.net'];
+        const input = document.getElementById('email-input');
+        const ul = document.getElementById('email-sug-wrapper');
+        let newIndex = 0;
+        //在输入内容的时候控制标签的显示
+        let filterList = [];
+        input.focus();
+        input.onkeyup = function (e) {
+            if ((e.keyCode || e.which) === 13 || (e.keyCode || e.which) === 38 || (e.keyCode || e.which) === 40) {
+                newIndex = newIndex;
+
+            } else {
+                reset();
+            }
+            ulContent();
+
+
+
+        }
+        //因为这个时间如果绑定在keyup上那么当按回车键隐藏后，keyup回弹的时候又会显示
+        input.oninput = ulShow
+        //要明确是给ul绑定时间，因为每个li便签都需要绑定
+        //事件的话就需要使用到事件委托给他们的父元素绑定事件，e.target会指向你当前点击的li标签
+        ul.onclick = function (e) {
+            input.value = htmlDecode(e.target.innerHTML); //解码
+
+
+            hidden();
+            input.focus();
+        }
+
+        document.onkeydown = function (e) {
+            let li = document.getElementsByTagName('li');
+            if ((e.keyCode || e.which) === 38) {
+                if (newIndex !== 0) {
+                    newIndex = newIndex - 1;
+                } else {
+                    newIndex = li.length - 1;
+                }
+
+            }
+            if ((e.keyCode || e.which) === 40) {
+                if (newIndex !== li.length - 1) {
+                    newIndex = newIndex + 1;
+                } else {
+                    newIndex = 0;
+                }
+
+            }
+            if ((e.keyCode || e.which) === 13) {
+                input.value = htmlDecode(li[newIndex].innerHTML);
+                hidden();
+            }
+            //ESC全选上文本框内容
+            if (e.keyCode == 27) {
+                //setSelectionRange()方法是作用在input元素上的
+                //从0开始到最后一个
+               input.setSelectionRange(0, -1);
+                hidden();
+            }
+
+        }
+
+        function reset() {
+            newIndex = 0;
+
+        }
+
+
+        function userInput() {
+            let value = input.value.trim();
+
+            return value;
+        }
+
+        function ulContent() {
+            ul.innerHTML = ''; //每次更新的时候清空之前的ul;
+            let inputText = userInput();
+            let n = inputText.indexOf('@');
+            if (n === -1) {
+                inputText = inputText;
+                filterList = postfixList;
+            } else {
+                if (inputText[n + 1]) {
+                    let item = inputText[n + 1];
+                    filterList = postfixList.filter(function (t) {
+                        return t[1].indexOf(item) !== -1
+                    })
+                } else {
+                    filterList = postfixList
+                }
+                inputText = inputText.slice(0, n);
+            }
+
+            filterList.forEach(function (t) {
+                let li = document.createElement('li');
+                let inputText1 = htmlEncode(inputText); //转码
+                li.innerHTML = inputText1 + t;
+                ul.appendChild(li);
+            });
+            let nowLi = document.getElementsByTagName('li');
+            //注意如果索引值大于数组的长度后，无法添加select且还会报错
+            if (newIndex < nowLi.length) {
+                nowLi[newIndex].className = 'select';
+            }
+
+        }
+
+        function htmlEncode(html) {
+            //1.首先动态创建一个容器标签元素，如DIV
+            var temp = document.createElement("div");
+            //2.然后将要转换的字符串设置为这个元素的innerText(ie支持)或者textContent(火狐，google支持)
+            (temp.textContent != undefined) ? (temp.textContent = html) : (temp.innerText = html);
+            //3.最后返回这个元素的innerHTML，即得到经过HTML编码转换的字符串了
+            var output = temp.innerHTML;
+            temp = null;
+            return output;
+        }
+
+        function htmlDecode(text) {
+            //1.首先动态创建一个容器标签元素，如DIV
+            var temp = document.createElement("div");
+            //2.然后将要转换的字符串设置为这个元素的innerHTML(ie，火狐，google都支持)
+            temp.innerHTML = text;
+            //3.最后返回这个元素的innerText(ie支持)或者textContent(火狐，google支持)，即得到经过HTML解码的字符串了。
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+
+        function ulShow() {
+            if (userInput() === "") {
+                hidden();
+            } else {
+                show();
+            }
+        }
+
+        function hidden() {
+            ul.style.display = 'none';
+        }
+
+        function show() {
+            ul.style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
