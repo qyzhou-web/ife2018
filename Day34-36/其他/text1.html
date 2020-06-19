@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script>
+        let canvas = document.getElementById('canvas');
+        let ctx = canvas.getContext('2d');
+        ctx.save();
+        ctx.translate(150,150);
+        ctx.lineWidth = 8;
+        ctx.scale(0.5,0.5)
+        //画时钟线
+        ctx.save();
+        for(let i = 0;i<12;i++){
+            ctx.beginPath();
+            ctx.rotate(Math.PI/6);
+            ctx.moveTo(100,0);
+            ctx.lineTo(120,0);
+            ctx.stroke();
+        }
+        ctx.restore();
+    </script>
+</body>
+</html>

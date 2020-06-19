@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid black;
+        }
+        table thead th {
+            border-left: 1px solid black;
+        }
+    </style>
+    <script src="./ife31data.js"></script>
+</head>
+
+
+<body>
+    <select id="region-select">
+        <option value="华东">华东</option>
+        <option value="华南">华南</option>
+        <option value="华北">华北</option>
+    </select>
+
+
+    <div id="table-wrapper">
+    </div>
+    <script>
+        
+// 这是一种实现思路，渲染表格的方法接受数据参数，但不关注数据怎么来的
+        const select = document.getElementById('region-select');
+        const tableWrapper = document.getElementById('table-wrapper');
+        let table = document.createElement('table');
+        select.onchange = function (e) {
+            table.innerHTML = '';
+            let value = e.target.value;
+            tableDate(value);
+
+        };
+
+        function getDate(value) {
+            let showValue = sourceData.filter(function (t) {
+                return t.region === value;
+            });
+            return showValue;
+        }
+
+
+        function theadDate() {
+            const thArry = ['商品', '地区', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+            let thead = document.createElement('thead');
+            let tr = document.createElement('tr');
+            for (let i = 0; i < thArry.length; i++) {
+                let th = document.createElement('th');
+                if (i > 1) {
+                    thArry[i] = thArry[i] + '月';
+                }
+                th.innerHTML = thArry[i];
+
+                tr.appendChild(th);
+            }
+            thead.appendChild(tr);
+            table.appendChild(thead);
+            tableWrapper.appendChild(table)
+        }
+
+        function tableDate(value) {
+            theadDate();
+            let tbodyDate = getDate(value);
+            let tbody = document.createElement('tbody');
+            tbodyDate.forEach(function (t) {
+                let tr = document.createElement('tr');
+                const td1 = document.createElement('td');
+                const td2 = document.createElement('td');
+                td1.innerHTML = t.product;
+                td2.innerHTML = t.region;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                t.sale.forEach(function (item) {
+                    let td = document.createElement('td');
+
+                    td.innerHTML = item;
+                    tr.appendChild(td);
+                })
+                tbody.appendChild(tr)
+            })
+            table.appendChild(tbody);
+            tableWrapper.appendChild(table);
+        }
+    </script>
+</body>
+
+</html>

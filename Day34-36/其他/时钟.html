@@ -1,0 +1,134 @@
+<!-- canvas学习
+1.在html文件内创建canvas标签及在里面写ID和height和width属性
+<canvas id="tutorial" width="150" height="150"></canvas>>
+2.在js文件里写操作这个canvas的代码
+  let canvas = document.getElementById('tutorial')
+  let ctx = canvas.getContext('2d')----相当于获得了一个画笔，可以使用这个画笔在canvas上绘图
+3.canvas只支持绘制矩形和路径
+ 矩形的3种绘制方法：fillRect(x,y,width,height)---绘制一个填充的矩形
+                  strokeRect(x,y,width,height)----绘制一个边框的矩形
+                 clearRect(x,y,width,height)-----清除指定矩形区域
+ 绘制路径：1.创建起点2.使用画图命令3.封闭路径4.生成路径后采用描边填充来渲染
+           常用函数：beginPath() clasePath() stroke() fill()
+           绘制圆形：arc(x,y,radius,startAngle,endAngle,anticlockwise)
+  4.为什么canvas都要以beginPath()开头，因为因为canvas的绘制方法都是从beginPath之后的所有路径开始绘制的，beginPath是开启新的一条路径
+如果没有beginPath会被当成一条路径重复画             -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+</body>
+<script>
+    clock()
+
+    function clock() {
+        var now = new Date();
+        var ctx = document.getElementById('canvas').getContext('2d');
+        ctx.save();
+        ctx.clearRect(0, 0, 150, 150);
+        ctx.translate(100, 100);
+        ctx.scale(0.4, 0.4);
+        ctx.rotate(-Math.PI / 2);
+        ctx.strokeStyle = "black";
+        ctx.fillStyle = "white";
+        ctx.lineWidth = 8;
+        ctx.lineCap = "round";
+
+        // Hour marks
+        ctx.save();
+
+        for (var i = 0; i < 12; i++) {
+            ctx.beginPath();
+            ctx.rotate(Math.PI / 6);
+            ctx.moveTo(100, 0);
+            ctx.lineTo(120, 0);
+            ctx.stroke();
+        }
+   
+        ctx.restore();
+      
+        // Minute marks
+        ctx.save();
+        ctx.lineWidth = 5;
+        for (i = 0; i < 60; i++) {
+            if (i % 5 != 0) {
+                ctx.beginPath();
+                ctx.moveTo(117, 0);
+                ctx.lineTo(120, 0);
+                ctx.stroke();
+            }
+            ctx.rotate(Math.PI / 30);
+        }
+        ctx.restore();
+
+        var sec = now.getSeconds();
+        var min = now.getMinutes();
+        var hr = now.getHours();
+        hr = hr >= 12 ? hr - 12 : hr;
+
+        ctx.fillStyle = "black";
+
+        // write Hours
+        ctx.save();
+        ctx.rotate(hr * (Math.PI / 6) + (Math.PI / 360) * min + (Math.PI / 21600) * sec)
+        ctx.lineWidth = 14;
+        ctx.beginPath();
+        ctx.moveTo(-20, 0);
+        ctx.lineTo(80, 0);
+        ctx.stroke();
+        ctx.restore();
+
+        // write Minutes
+        ctx.save();
+        ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec)
+        ctx.lineWidth = 10;
+        ctx.beginPath();
+        ctx.moveTo(-28, 0);
+        ctx.lineTo(112, 0);
+        ctx.stroke();
+        ctx.restore();
+
+        // Write seconds
+        ctx.save();
+        ctx.rotate(sec * Math.PI / 30);
+        ctx.strokeStyle = "#D40000";
+        ctx.fillStyle = "#D40000";
+        ctx.lineWidth = 6;
+        ctx.beginPath();
+        ctx.moveTo(-30, 0);
+        ctx.lineTo(83, 0);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(0, 0, 10, 0, Math.PI * 2, true);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(95, 0, 10, 0, Math.PI * 2, true);
+        ctx.stroke();
+        ctx.fillStyle = "rgba(0,0,0,0)";
+        ctx.arc(0, 0, 3, 0, Math.PI * 2, true);
+        ctx.fill();
+        ctx.restore();
+
+        ctx.beginPath();
+        ctx.lineWidth = 14;
+        ctx.strokeStyle = '#325FA2';
+        ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+        ctx.stroke();
+
+        ctx.restore();
+
+   
+    }
+
+    setInterval(clock,1000);
+</script>
+
+</html>
