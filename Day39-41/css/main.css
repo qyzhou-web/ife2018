@@ -1,0 +1,69 @@
+#radio-wrapper {
+    overflow: auto;
+}
+
+#region-radio-wrapper {
+    float: left;
+}
+
+#product-radio-wrapper {
+    float: left;
+}
+
+#chart-wrapper {
+    overflow: auto;
+}
+
+#chart-using-svg {
+    width: 50%;
+    float: left;
+}
+
+#chart-using-canvas {
+    width: 50%;
+    float: left;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+}
+table input{
+    width: 30%;
+}
+
+.confirm,.cancel{
+    border: none;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+}
+.confirm{
+    background-image: url("../image/checked.png"); 
+}
+.cancel{
+    background-image: url("../image/delete.png");
+}
+
+table .sale:hover{
+    background-image: url('../image/edit.png');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+}
+
+
+
+
+

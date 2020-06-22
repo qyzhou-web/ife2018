@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="button">
+        <button id="a">A</button>
+        <button id="b">B</button>
+        <button id="c">C</button>
+    </div>
+    <div id="cont"></div>
+    <!-- function 解析Hash，获取状态参数() {
+        取到需要的值，并返回
+    }
+    
+    function 渲染函数() {
+        内容 = 解析Hash，获取状态参数()
+        cont的innerHTML = 内容
+    }
+    
+    按钮点击事件 = function() {
+        设置新的hash
+    }
+    
+    window.onhashchange = 渲染函数
+    
+    进来先执行一次渲染函数()？ -->
+
+    <script>
+        //先通过点击事件设置url的hash值，然后再监控hash值的改变来设置cont的内容
+        function parsingHash() {
+        let s = window.location.hash;
+            return s ? s.substring(1) : null;
+        }
+
+        function render() {
+            let content = parsingHash();
+            cont.innerHTML = content;
+        }
+        let buttons = document.getElementsByTagName('button');
+        let cont = document.getElementById('cont')
+        for (let i = 0; i < buttons.length; i++) {
+
+            buttons[i].onclick = function () {
+            window.location.hash = buttons[i].innerHTML;
+            }
+        }
+        window.addEventListener('hashchange',render,false);
+        render()
+    </script>
+</body>
+
+</html>
