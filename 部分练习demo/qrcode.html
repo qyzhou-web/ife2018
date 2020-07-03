@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .kaola {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        margin-left: 300px;
+        position: relative;
+        background-color:pink;
+    }
+
+    .kaola a {
+        color: black;
+        text-decoration: none;
+        margin-left: 20px;
+       
+    }
+
+   
+    .code {
+        display: none;
+        position: absolute;
+        border: 1px solid #eaeaea;
+        padding: 5px;
+        left: 0;
+            left: -64px;
+            /* transform: translate(-50%);
+            margin-left: 50%; */
+
+    }
+
+    .kaola .code span {
+        display: block;
+        font-size: 14px;
+        text-align: center;
+        line-height: 18px;
+        bottom: 5px;
+    }
+
+    .arrow {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid #eaeaea;
+        border-left: 1px solid #eaeaea;
+        transform: rotate(45deg);
+        background-color: white;
+        top: -6px;
+        left: 0;
+        right: 0;
+        margin:  0 auto;
+    
+    }
+    .kaola a:hover+.code{
+        display: block;
+    }
+</style>
+
+<body>
+
+    <div class="kaola">
+        <a href="#">手机考拉</a>
+        <div class="code">
+            <span class="arrow"></span>
+            <img src="./img/img/qrcode.png" alt="qrcode">
+            <span class="app">下载APP</span>
+            <span>领1000元新人礼包</span>
+        </div>
+    </div>
+    <div class="arrow">
+
+    </div>
+</body>
+
+</html>

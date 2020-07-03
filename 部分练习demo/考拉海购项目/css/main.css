@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+#main {
+    margin-top: 100px;
+}
+
+#main .left {
+    float:left;
+    position: relative;
+    width: 219px;
+    height: 355px;
+    background-color: #333333;
+    border-right:  1px solid #ccc;;
+}
+
+#main .left img {
+    height: 219px;
+    width: 219px;
+}
+
+#main .left .progress {
+    height: 2px;
+    width: 100px;
+    background-color: red;
+}
+
+#main .wrap .left .info {
+    width: 219px;
+    color: white;
+    position: absolute;
+    bottom: 30px;
+
+    text-align: center;
+
+}
+
+#main .wrap .left .grass {
+
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+
+#main .wrap .left .introduce {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* -------list相关样式---- */
+
+#main .list {
+    /* float: right; */
+    width: 880px;
+    float: left;
+    height: 354px;
+    border-top: 1px solid #ccc;
+    background-color: white;
+    /* background-color: pink; */
+}
+#main .list li{
+    position: relative;
+    float: left;
+    width: 219px;
+    height: 176px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+#main .list li .info{
+ text-align: center;
+  
+   
+}
+#main .list li p{
+    bottom:30px;
+    color:black;
+    font-size: 15px;
+    font-weight: 700;
+}
+

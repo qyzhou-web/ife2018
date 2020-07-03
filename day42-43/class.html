@@ -39,113 +39,25 @@ console.log(ifeRestaurant.staff);-->
 </body>
 
 <script>
-  // 餐厅类
-  // 属性：金钱，座位数量、职员列表
-  // 方法：招聘职员，解雇职员
-  function Restaurant(cash, seats, staff) {
-    this.cash = cash;
-    this.seats = seats;
-    this.staff = staff;
-  }
-  Restaurant.prototype.hire = function (s) {
-    if (!(s instanceof Staff)) {
-      return;
-    }
-    this.staff.push(s);
-    console.log('招聘一个新职员')
-  }
-  Restaurant.prototype.fire = function (id) {
-    if (typeof id !== "number") {
-      return;
-    }
-    this.staff = this.staff.filter(function (item) {
-      return item.id !== id;
-    })
-  }
-
-  Restaurant.prototype.beginOrder = function (o) {
-    this.bookedMeal = this.bookedMeal.concat(o.mealList);
-    this.cash -= o.cost;
-    this.seat -= o.seat;
-    this.orderListpush(o);
-  }
-  Restaurant.prototype.finishOrder = function (o) {
-    this.cash += o.price;
-    this.seat += o.seat;
-  }
-  // 职员类
-  // 属性：ID，姓名，工资
-  // 方法：完成一次工作
-  function Staff(id, name, salary) {
-    this.id = id;
+  var Singleton = function (name) {
     this.name = name;
-    this.salary = salary;
-  }
-
-  // 服务员类，继承自职员
-  // 完成一次工作：如果参数是个数组，则记录客人点菜，如果参数不是数组则是上菜行为
-  function Waiter(id, name, salary, workName) {
-    Staff.call(this, id, name, salary);
-
-  }
-
-  Waiter.prototype = Object.create(Staff.prototype);
-  Waiter.prototype.constructor = Waiter;
-  // 厨师类，继承自职员
-  //   完成一次工作：烹饪出菜品
-  Waiter.prototype.submitOrder = function (customerId, seat, mealList, r) {
-    var o = new Order(Date.now(), mealList, seat, mealList);
-
-    r.beginOrder(o);
-  }
-  Waiter.prototype.serve = function (customerId) {};
-
-  function Chef(id, name, salary) {
-    Staff.call(this, id, name, salary);
-  }
-  Chef.prototype = Object.create(Staff.prototype);
-  chef.prototype.constructor = Chef;
-  Chef.prototype.cook = function () {
-
-  }
-  // 顾客类
-  //   方法：点菜，吃
-  // 菜品类
-  //   属性：名字、烹饪成本、价格 
-  function Customer(id,seat,mealList) {
-    this.id = id;
-    this.seat = seat;
-    this.mealList = mealList;
-
-  }
-  Custom.prototype.order = function (w) {
-    if(!(w instanceof Waiter)){
-      return;
-    }
-    return w.submitOrder(this.id,this.seat,this.mealList)
-  };
-  Customer.prototype.eat = function (r,m) {
-
+    this.instance = null;
   };
 
-  function Meal(name,cost,price) {
-    this.name = name;
-    this.cost = cost;
-    this.price = price;
-  }
+  Singleton.prototype.getName = function () {
+    alert(this.name);
+  };
 
-  function Order(id,mealList,seat,customerId){
-    this.id = id;
-    this.mealList = mralList;
-    this.seat = seat;
-    this.customerId = customerId;
-    this.cost = mealList.reduce(function(prev,curr,index,arry){
-      return cerr.cost + prev.cost;
-    });
-    this.price = mealList.reduce(function(prev,curr,index,arry){
-      return curr.price + prev.price;
-    })
-  }
+  Singleton.getInstance = function (name) {
+    if (!this.instance) {
+      this.instance = new Singleton(name);
+    }
+
+    return this.instance;
+  };
+
+  var a = Singleton.getInstance('seven1');
+  var b = Singleton.getInstance('seven2');
 </script>
 
 </html>

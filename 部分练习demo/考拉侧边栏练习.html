@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div,
+    ul,
+    li,
+    i,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .aside ul {
+        position: fixed;
+        list-style: none;
+        right: 30px;
+        bottom: 50px;
+    }
+   .clearBtm{
+       border-right:  1px solid #eaeaea;
+       border-left: 1px solid #eaeaea;
+   }
+
+    .aside ul li a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        width: 62px;
+        height: 62px;
+        text-align: center;
+
+    }
+    .border{
+        border: 1px solid #eaeaea;
+    }
+
+    .aside ul li a i {
+        margin-top: 10px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url('./img/img/icon-aside-right-cart.png');
+    }
+
+    .aside ul li a span {
+        display: block;
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <div class="aside">
+        <ul>
+            <li>
+                <a href="#" class="border">
+                    <i></i>
+                    <span>签到</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="clearBtm">
+                    <i></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="border">
+                    <i></i>
+                    <span>APP</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="clearBtm">
+                    <i></i>
+                    <span>TOP</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

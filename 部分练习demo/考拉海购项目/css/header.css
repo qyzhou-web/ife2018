@@ -1,0 +1,276 @@
+@charset "utf-8";
+
+#header .banner {
+    overflow: hidden;
+    min-width: 1100px;
+
+}
+
+#header .banner img {
+    position: relative;
+    transform: translate(-50%, 0);
+    left: 50%;
+    /* vertical-align: middle; */
+
+}
+
+#header .nav {
+    height: 30px;
+    background-color: #000000;
+
+}
+
+#header .nav .wrap a {
+    text-decoration: none;
+    /* color: white; */
+    color: #999;
+    line-height: 30px;
+    padding:0 20px;
+
+}
+#header .nav .wrap a:hover{
+    color:white
+    
+}
+#header .nav .wrap .disp:hover{
+    display: inline-block;
+    background-color: white;
+    height: 30px ;
+    color:red;
+}
+
+
+#header .nav .wrap .nav-left {
+    float: left;
+}
+
+#header .nav .nav-right {
+    float: right;
+    position: relative;
+}
+
+
+
+/* ---------图片和搜索框的样式 ------------*/
+
+
+
+#header .logo-search {
+    height: 100px;
+}
+
+#header .logo-search .wrap {
+    position: relative;
+    height: 100px;
+}
+
+#header .logo-search .logo {
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 50%;
+
+}
+
+#header .logo-search .search {
+    position: relative;
+    width: 476px;
+    height: 38px;
+    border: 2px solid #ff2337;
+    border-radius: 40px;
+    float: right;
+    margin-top: 28px;
+    background-color: #fff;
+}
+
+#header .logo-search .search i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 8px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../img/kl-sprite-01.png');
+    background-position: -466px -667px;
+
+
+
+}
+
+#header .logo-search .search input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 30px;
+    height: 24px;
+    width: 380px;
+}
+
+#header .logo-search .search input::placeholder {
+    font-style: italic;
+}
+
+#header .logo-search .search span {
+   position: absolute;
+   right: -2px;
+   top:-2px;
+    width: 62px;
+    height: 40px;
+    background: url(../img/icon-search.png) no-repeat center center #ff2337;
+    border-radius: 44px;
+
+
+
+
+}
+
+
+/*--------- top部分样式----------- */
+#top .wrap{
+    height:41px;
+}
+#top .t-nav{
+    width: 164px;
+    height: 41px;
+    line-height: 41px;
+    float:left;
+    background-color:  #ff2337;
+    color:white;
+    font-size: 15px;
+}
+#top .t-nav .category{
+    position: relative;
+    background-color:  #ff2337;  
+    z-index: 9; 
+}
+
+#top .t-nav .category a {
+    display: block;
+    height: 41px;
+    line-height: 41px;
+    border-top: 1px solid #ff5160;
+    
+}
+#top .t-nav .category a:hover {
+    background-color: white;
+
+}
+#top .t-nav .category a:hover span{
+    color:#ff2337;
+}
+#top .t-nav .category a:hover img{
+    display: none;
+}
+#top .t-nav .category a:hover .active{
+    display:inline-block ;
+}
+
+#top .t-nav .category img{
+    margin-left: 18px;
+}
+#top .t-nav .category  .active{
+    display: none;
+}
+#top .t-nav .category li span{
+    color:white;
+    margin-left:30px;
+}
+#top .t-nav span{
+    margin-left: 28px;
+}
+#top .t-nav .lineicon{
+    margin-left :20px;
+}
+#top .info ul{
+    margin-left: 170px;
+    width: 632px;
+    height: 40px;
+    
+}
+#top .info a{
+    float:left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight:700;
+    margin-left:30px;
+}
+
+.ared{
+    color:red
+}
+
+#top .info ul li a:hover{
+    color:red;
+}
+#top .swiper{
+    position: relative;
+    height: 506px;
+}
+
+#top .swiper .t-banner{
+    position: absolute;
+    transform: translate(-50%,0);
+    left:50%;
+    /* z-index: -1; */
+}
+#top .swiper .dots{
+    position: absolute;
+    bottom: 70px;
+    left:270px;
+    width: 192px;
+    height: 9px;
+}
+
+#top .swiper .dots i{
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right:16px
+}
+
+#top .swiper .dots i:hover{
+    background-color: red;
+}
+#top .swiper .dots :nth-child(1){
+    background-color:red
+}
+
+/* ------blur样式---------- */
+#top .swiper .blur-out{
+    /* position: relative; */
+    height: 45px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* position: absolute; */
+}
+
+#top .swiper .blur-out .blur{
+    position: absolute;
+    bottom:0px;
+   left: 0;
+   right: 0;
+   margin: auto 0;
+    height: 45px;
+    background: url("../img/banner.jpg") center bottom;
+    filter: blur(8px);
+}
+#top .swiper .wrap  ul{
+    position: absolute;
+    bottom: 0;
+}
+#top .swiper .wrap li{
+    float: left;
+   font-size: 15px;
+line-height: 45px;
+    color: white;
+    margin-right: 25px;
+
+}

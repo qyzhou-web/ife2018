@@ -1,0 +1,44 @@
+{
+  "id": "1838144",
+  "name": "test01",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14817825",
+      "name": "icon_blurb",
+      "font_class": "icon_blurb",
+      "unicode": "e75c",
+      "unicode_decimal": 59228
+    },
+    {
+      "icon_id": "14817826",
+      "name": "icon_backpack",
+      "font_class": "icon_backpack",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "14817827",
+      "name": "icon_book2",
+      "font_class": "icon_book2",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "14817828",
+      "name": "icon_bag",
+      "font_class": "icon_bag",
+      "unicode": "e75f",
+      "unicode_decimal": 59231
+    },
+    {
+      "icon_id": "14817849",
+      "name": "icon_cardsecurity2",
+      "font_class": "icon_cardsecurity2",
+      "unicode": "e762",
+      "unicode_decimal": 59234
+    }
+  ]
+}
